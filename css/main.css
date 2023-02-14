@@ -1,0 +1,7 @@
+.block {
+    display: block;
+}
+
+.input-user-number, .button {
+    margin-top: 10px;
+}
