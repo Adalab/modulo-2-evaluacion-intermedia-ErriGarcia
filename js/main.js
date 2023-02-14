@@ -1,6 +1,6 @@
 'use strict'
 
-// Variables
+// VARIABLES
 
 const userNumber = document.querySelector('.js-user-number')
 const button = document.querySelector('.js-button')
@@ -8,25 +8,32 @@ const message = document.querySelector('.js-message')
 const attempts = document.querySelector('.js-attempts')
 
 
-// Variables globales
+// GLOBAL VARIABLES
+
 const randomNumber = getRandomNumber(100)
-let acc = 1;
+let totalAttempts = 0
 
 
-// Funciones
-function showAttempts() {
-    const totalAttempt = acc++
-    attempts.innerHTML = `Número de intentos: ${totalAttempt}`
+// FUNCTIONS
+
+// Function to show numbers of attempts
+const showAttempts = () => {
+    totalAttempts++
+    attempts.innerHTML = `Número de intentos: ${totalAttempts}`
 }
 
+
+// Function to get a random number
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max)
 }
 
-function guessRandomNumber() {
+
+// Function to guess the random number
+const guessRandomNumber = () => {
     const userNumberValue = parseInt(userNumber.value)
 
-    // Este es el número aleatorio
+    // Random number
     console.log(`El número aleatorio es: ${randomNumber}`)
     
     if (userNumberValue < 1 || userNumberValue > 100) {
@@ -40,13 +47,15 @@ function guessRandomNumber() {
     }
 }
 
-function handleClick(event) {
+
+// Handle function
+const handleClick = (event) => {
     event.preventDefault()
     guessRandomNumber()
     showAttempts()
 }
 
 
-// Eventos
+// EVENTS
 
 button.addEventListener('click', handleClick)
