@@ -10,7 +10,7 @@ const attempts = document.querySelector('.js-attempts')
 
 // Variables globales
 const randomNumber = getRandomNumber(100)
-let acc = 0;
+let acc = 1;
 
 
 // Funciones
