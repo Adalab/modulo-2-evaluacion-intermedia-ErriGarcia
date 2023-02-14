@@ -32,4 +32,5 @@
 .message, .attempts {
     border: solid 2px gainsboro;
     padding: 4px;
+    width: 60%;
 }
