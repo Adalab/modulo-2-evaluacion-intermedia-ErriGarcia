@@ -13,7 +13,7 @@ The very first challenge was to sort the "if".
 ### Getting Started 💪🏼
 
 Clone the repo:
-* `git clone https://github.com/Adalab/modulo-1-evaluacion-final-ErriGarcia.git`
+* `git clone http://beta.adalab.es/modulo-2-evaluacion-intermedia-ErriGarcia/`
 
 ### License
 Distributed under the MIT License. See LICENSE.txt for more information.
