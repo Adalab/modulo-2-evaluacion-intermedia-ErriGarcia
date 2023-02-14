@@ -32,6 +32,7 @@ function getRandomNumber(max) {
 // Function to guess the random number
 const guessRandomNumber = () => {
     const userNumberValue = parseInt(userNumber.value)
+    console.log(`El número de la usuaria es: ${userNumberValue}`)
 
     // Random number
     console.log(`El número aleatorio es: ${randomNumber}`)
