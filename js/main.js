@@ -28,6 +28,11 @@ function getRandomNumber(max) {
     return Math.ceil(Math.random() * max)
 }
 
+// Function for the message
+const showMessage = (messageResult) => {
+    message.innerHTML = messageResult;
+}
+
 
 // Function to guess the random number
 const guessRandomNumber = () => {
@@ -38,13 +43,13 @@ const guessRandomNumber = () => {
     console.log(`El número aleatorio es: ${randomNumber}`)
     
     if (userNumberValue < 1 || userNumberValue > 100) {
-        message.innerHTML = 'Pista: El número debe estar entre 1 y 100'
+        showMessage('Pista: El número debe estar entre 1 y 100')
     } else if (userNumberValue === randomNumber) {
-        message.innerHTML = 'Pista: Has ganado campeona!!!'
+        showMessage('Has ganado campeona!!!')
     } else if (userNumberValue < randomNumber) {
-        message.innerHTML = 'Pista: Demasiado bajo'
+        showMessage('Pista: Demasiado bajo')
     } else {
-        message.innerHTML = 'Pista: Demasido alto'
+        showMessage('Pista: Demasido alto')
     }
 }
 
