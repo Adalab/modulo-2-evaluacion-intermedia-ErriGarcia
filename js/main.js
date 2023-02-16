@@ -18,8 +18,15 @@ let totalAttempts = 0
 
 // Function to show numbers of attempts
 const showAttempts = () => {
-    totalAttempts++
-    attempts.innerHTML = `Número de intentos: ${totalAttempts}`
+    if (isNaN(parseInt(userNumber.value))) {
+        message.innerHTML = 'Pista: Escribe el número y dale a Prueba'
+        message.classList.add('start-message')
+    } else {
+        message.classList.remove('start-message')
+        guessRandomNumber()
+        totalAttempts++
+        attempts.innerHTML = `Número de intentos: ${totalAttempts}`
+    }
 }
 
 

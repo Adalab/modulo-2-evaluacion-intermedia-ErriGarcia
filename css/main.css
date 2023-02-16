@@ -34,3 +34,8 @@
     padding: 4px;
     width: 60%;
 }
+
+.start-message {
+    border: solid 2px red;
+    color: red;
+}
