@@ -39,6 +39,10 @@ function getRandomNumber(max) {
 // Function to guess the random number
 const guessRandomNumber = () => {
     const userNumberValue = parseInt(userNumber.value)
+    console.log(`El número de la usuaria es: ${userNumberValue}`)
+
+    // Random number
+    console.log(`El número aleatorio es: ${randomNumber}`)
     
     if (userNumberValue < 1 || userNumberValue > 100) {
         message.innerHTML = 'Pista: El número debe estar entre 1 y 100'
@@ -49,9 +53,6 @@ const guessRandomNumber = () => {
     } else {
         message.innerHTML = 'Pista: Demasido alto'
     }
-    console.log(`El número de la usuaria es: ${userNumberValue}`)
-    // Random number
-    console.log(`El número aleatorio es: ${randomNumber}`)
 }
 
 
