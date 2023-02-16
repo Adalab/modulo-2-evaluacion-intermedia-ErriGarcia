@@ -18,15 +18,8 @@ let totalAttempts = 0
 
 // Function to show numbers of attempts
 const showAttempts = () => {
-    if (isNaN(parseInt(userNumber.value))) {
-        message.innerHTML = 'Pista: Escribe el número y dale a Prueba'
-        message.classList.add('start-message')
-    } else {
-        message.classList.remove('start-message')
-        guessRandomNumber()
         totalAttempts++
         attempts.innerHTML = `Número de intentos: ${totalAttempts}`
-    }
 }
 
 
@@ -40,6 +33,10 @@ const showMessage = (messageResult) => {
     message.innerHTML = messageResult;
 }
 
+// Function to remove class start-message
+const removeStartMessageClass = () => {
+    message.classList.remove('start-message')
+}
 
 // Function to guess the random number
 const guessRandomNumber = () => {
@@ -48,14 +45,20 @@ const guessRandomNumber = () => {
 
     // Random number
     console.log(`El número aleatorio es: ${randomNumber}`)
-    
-    if (userNumberValue < 1 || userNumberValue > 100) {
+    if (isNaN(userNumberValue)) {
+        message.innerHTML = 'Pista: Escribe el número y dale a Prueba'
+        message.classList.add('start-message')
+    } else if (userNumberValue < 1 || userNumberValue > 100) {
+        removeStartMessageClass()
         showMessage('Pista: El número debe estar entre 1 y 100')
     } else if (userNumberValue === randomNumber) {
+        removeStartMessageClass
         showMessage('Has ganado campeona!!!')
     } else if (userNumberValue < randomNumber) {
+        removeStartMessageClass
         showMessage('Pista: Demasiado bajo')
     } else {
+        removeStartMessageClass
         showMessage('Pista: Demasido alto')
     }
 }
